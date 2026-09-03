@@ -1,0 +1,21 @@
+S = input().strip()
+seen = 0
+duplicate = 0
+for ch in S:
+    index = ord(ch) - ord('a')
+    bit = 1 << index
+    if seen & bit:
+        duplicate |= bit
+    else:
+        seen |= bit
+result = []
+for ch in S:
+    index = ord(ch) - ord('a')
+    bit = 1 << index
+    if duplicate & bit:
+        if ch not in result:
+            result.append(ch)
+if result:
+    print(*result)
+else:
+    print("No duplicates")
