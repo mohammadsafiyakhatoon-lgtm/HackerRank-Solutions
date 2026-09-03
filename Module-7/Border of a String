@@ -1,0 +1,10 @@
+S = input()
+answer = ""
+for i in range (1, len(S)):
+    prefix = S[:i]
+    suffix = S[len(S)-i:]
+    if prefix == suffix:
+        answer = prefix 
+print(answer)
+    
+    
